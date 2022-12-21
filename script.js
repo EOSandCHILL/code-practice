@@ -26,3 +26,83 @@ the out put is:
 The down payment for home 1 is 20000. The down payment for home 2 is 24000. The down payment for home 3 is 60000. So, you owe a total of 104000 in down payments.
 
 */
+
+// Objects practice
+
+let car = {
+  make: "Jeep",
+  model: {
+    name: "hellcat",
+    year: 2022,
+    hp: 900,
+    gas: {
+      standard: false,
+      premium: true,
+      diesel: false,
+    },
+  },
+  used: false,
+  features: ["subwoofers", "22 in wheels", "sunroof"],
+  makeNoise() {
+    console.log("Vroom");
+  },
+};
+
+console.log(car.model.gas.premium);
+
+let book = {
+  Title: "2022 Hell Cat Owners Manual",
+  Author: {
+    name: "Dodge",
+    published: 2022,
+  },
+};
+
+console.log(book.Author.name);
+console.log(book.Title);
+
+book.Title = "2022 Jeep SRT Hell Cat Owners Manual";
+console.log(book.Title);
+
+// most common array methods
+
+const a = [1, 2, 3, 4, 5];
+
+// loops through each element and applies the function to each array element
+a.forEach((number) => {
+  console.log(number + 1);
+});
+
+// loops through each element and returns a new array for the array
+const newA = a.map((number) => {
+  return number * 2;
+});
+console.log(newA);
+
+// filter down to only select values
+const arr = a.filter((number) => {
+  return number <= 4;
+});
+console.log(arr);
+
+// finds a select value. stops once the value is found.
+const findMe = a.find((number) => {
+  return number > 2;
+});
+console.log(findMe);
+
+// loops through elements in the array looking for a single match with the function
+const doSome = a.some((number) => {
+  return number > 4;
+});
+console.log(doSome);
+
+// loops through all the elements in the array looking for all elements to match with the function
+const doesEvery = a.every((number) => {
+  return number > 4;
+});
+console.log(doesEvery);
+
+// loops through all the elements in the array looking for the specific element and if its included
+const isIncluded = a.includes(2);
+console.log(isIncluded);
