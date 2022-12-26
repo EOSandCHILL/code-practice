@@ -106,3 +106,64 @@ console.log(doesEvery);
 // loops through all the elements in the array looking for the specific element and if its included
 const isIncluded = a.includes(2);
 console.log(isIncluded);
+
+// New and This
+
+function createUser(name, age) {
+  return { name: name, age: age, human: true };
+}
+
+let user = createUser("Jerry", 30);
+console.log(user);
+
+// When creating an object with the new keyword it is called a constructor where you pass in information
+// const date = new Date();
+// console.log(date.getMonth());
+
+// When creating a contructor, which is a new object, it is best practice to capitalize the name of the constructor. When using a constructor you get access to the this keyword which references the current object youre trying to create. when a constructor is called behind the scenes is creates "this = {}" which a variable called this and sets it equal to a new empty object. At the end of your function it returns the new object for you
+
+// function User(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.human = true;
+// }
+
+// object > new > gain access to "this" > new object created to replace old one
+user = createUser("Jerry Jr", 0.5);
+console.log(user);
+
+// Classes
+
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.human = true;
+  }
+  //Claases make it easier to add functions
+  printName() {
+    console.log(this.name);
+  }
+}
+
+user = new User("Marissa", 27);
+console.log(user);
+user.printName();
+
+/* 
+ASYNC vs DEFER
+
+standard - parsing through html > reaches script tag > downloads script tag > executes script tag > continues parsing out html
+
+ASYNC - parsing through html > reaches script tag > downloads script tag in the background while still parsing through HTML > script downloaded > parsing stops > executes script tag > continues parsing out html (downloads script in the background asynchronously)
+
+DEFER - parsing through html > reaches script tag > downloads script tag in the background while still parsing through HTML > script downloaded > html parsing complete > executes script tag (All execution is DEFERED until the end of the page)
+
+*/
+
+// query selector
+
+const divClass = document.querySelectorAll(".div-class-one");
+console.log(dataTest);
+divClass.forEach((div) => (div.style.color = "red"));
+console.log(divClass);
