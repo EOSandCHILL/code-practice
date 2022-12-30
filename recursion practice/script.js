@@ -1,24 +1,22 @@
-// Create a function that counts down from 10 to 0. First use a for loop and then use recursion. If the loop has is not done, tell the program to keep counting down, but when the program ends make sure the program notifies us that the count down is complete.
+// Create a function that counts up from 5 to 10. First use a for loop in the function and then use recursion in the function. If the loop is not done, tell the program to keep counting down, but when the program ends make sure the program notifies us when 10 is reached.
 
-const countDownLoop = (num) => {
-  for (let i = num; i >= 0; i--) {
-    console.log(i + " " + "until 0");
-    i == 0
-      ? console.log("count down complete")
-      : console.log("keep counting down");
+const fiveToTenLoop = (num) => {
+  for (let i = num; i <= 10; i++) {
+    i < 10
+      ? console.log(i + "... " + "keep counting...")
+      : console.log("Finally! 10 was reached!");
   }
 };
-countDownLoop(10);
+fiveToTenLoop(5);
 
 console.log(" ");
 
-const countDownRecursion = (num) => {
-  console.log(num + " " + "until 0");
-  num > 0
-    ? console.log("keep counting down")
-    : console.log("count down complete");
-  const updatedNum = num - 1;
-  num > 0 ? countDownRecursion(updatedNum) : null;
+const fiveToTenRec = (num) => {
+  num < 10
+    ? console.log(num + "... " + "keep counting...")
+    : console.log("Finally! 10 was reached!");
+  const updatedNum = num + 1;
+  num < 10 ? fiveToTenRec(updatedNum) : null;
 };
 
-countDownRecursion(10);
+fiveToTenRec(5);
